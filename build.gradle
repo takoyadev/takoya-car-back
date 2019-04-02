@@ -21,6 +21,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.data:spring-data-jpa'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.0.Final'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
