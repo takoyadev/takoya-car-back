@@ -2,7 +2,6 @@ package fr.takoyadev.car.server.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -13,6 +12,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 @Configuration
 public class AppConfig {
@@ -32,11 +32,13 @@ public class AppConfig {
 
     @Bean
     public DataSource dataSource(){
+        ResourceBundle bundle = ResourceBundle.getBundle("application");
+
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/takoyacar");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("postgres");
+        dataSource.setDriverClassName(bundle.getString("driver"));
+        dataSource.setUrl(bundle.getString("url"));
+        dataSource.setUsername(bundle.getString("username"));
+        dataSource.setPassword(bundle.getString("password"));
         return dataSource;
     }
 

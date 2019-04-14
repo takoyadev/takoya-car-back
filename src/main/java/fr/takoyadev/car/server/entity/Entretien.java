@@ -3,9 +3,10 @@ package fr.takoyadev.car.server.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-public class Car {
+public class Entretien {
 
     @Id
     @Getter
@@ -13,15 +14,18 @@ public class Car {
     private Long id;
 
     @Getter
-    @Column(length = 50, nullable = false)
-    private String marque;
+    @Column(nullable = false)
+    private Date date;
 
     @Getter
-    @Column(length = 50, nullable = false)
-    private String modele;
+    @Column(nullable = false)
+    private String libelle;
+
+    @Getter
+    @OneToOne
+    private Car car;
 
     @Getter
     @OneToOne
     private Owner owner;
-
 }
