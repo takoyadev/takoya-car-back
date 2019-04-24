@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
 
 group 'fr.takoyadev'
 version '1.0-SNAPSHOT'
@@ -28,6 +29,7 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.10.RELEASE'
     compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
     compile group: 'org.jasypt', name: 'jasypt-hibernate4', version: '1.9.2'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
