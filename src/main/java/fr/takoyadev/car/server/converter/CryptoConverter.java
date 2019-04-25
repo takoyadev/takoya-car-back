@@ -11,7 +11,7 @@ import java.util.Base64;
 public class CryptoConverter implements AttributeConverter<String, String> {
 
     private static final String ALGORITHM = "AES/ECB/PKCS5Padding";
-    private static final byte[] KEY = "MySuperSecretKey".getBytes();
+    private static final byte[] KEY = "MyGrosseKey@1300".getBytes();
 
     @Override
     public String convertToDatabaseColumn(String ccNumber) {
@@ -20,7 +20,7 @@ public class CryptoConverter implements AttributeConverter<String, String> {
         try {
             Cipher c = Cipher.getInstance(ALGORITHM);
             c.init(Cipher.ENCRYPT_MODE, key);
-            return org.postgresql.util.Base64.encodeBytes(c.doFinal(ccNumber.getBytes()));
+            return Base64.getEncoder().encodeToString(c.doFinal(ccNumber.getBytes()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -33,7 +33,7 @@ public class CryptoConverter implements AttributeConverter<String, String> {
         try {
             Cipher c = Cipher.getInstance(ALGORITHM);
             c.init(Cipher.DECRYPT_MODE, key);
-            return new String(c.doFinal(org.postgresql.util.Base64.decode(dbData)));
+            return new String(c.doFinal(Base64.getDecoder().decode(dbData)));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
