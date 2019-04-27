@@ -24,8 +24,4 @@ public class Entretien {
     @Getter
     @OneToOne
     private Car car;
-
-    @Getter
-    @OneToOne
-    private Owner owner;
 }

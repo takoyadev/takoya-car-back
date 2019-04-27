@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface EntretienRepository extends CrudRepository<Entretien, Long> {
-
-    List<Entretien> findByOwnerId(Long id);
+    List<Entretien> findByCarOwnerId(Long id);
     List<Entretien> findByCarId(Long id);
 }
