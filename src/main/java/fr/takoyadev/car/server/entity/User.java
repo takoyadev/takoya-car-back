@@ -16,11 +16,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 @Entity(name = "Users")
 public class User implements UserDetails {
 
     @Id
-    @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
