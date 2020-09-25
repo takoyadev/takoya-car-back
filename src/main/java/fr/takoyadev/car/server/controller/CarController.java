@@ -14,17 +14,17 @@ public class CarController {
     @Autowired
     private CarRepository carRepository;
 
-    @RequestMapping("/cars")
+    @GetMapping("/cars")
     public Iterable<Car> findAllCars() {
         return this.carRepository.findAll();
     }
 
-    @RequestMapping("/car/{id}")
+    @GetMapping("/car/{id}")
     public Optional<Car> findCar(@PathVariable Long id) {
         return this.carRepository.findById(id);
     }
 
-    @RequestMapping(value = "/car/add", method = RequestMethod.POST)
+    @PostMapping(value = "/car/add")
     public void saveCar(@RequestBody Car car) {
         this.carRepository.save(car);
     }

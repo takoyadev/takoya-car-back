@@ -13,17 +13,17 @@ public class OwnerController {
     @Autowired
     private OwnerRepository ownerRepository;
 
-    @RequestMapping("/owners")
+    @GetMapping("/owners")
     public Iterable<Owner> findAllCars() {
         return this.ownerRepository.findAll();
     }
 
-    @RequestMapping("/owner/{id}")
+    @GetMapping("/owner/{id}")
     public Optional<Owner> findCar(@PathVariable Long id) {
         return this.ownerRepository.findById(id);
     }
 
-    @RequestMapping(value = "/owner/add", method = RequestMethod.POST)
+    @PostMapping(value = "/owner/add")
     public void saveCar(@RequestBody Owner owner) {
         this.ownerRepository.save(owner);
     }
