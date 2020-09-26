@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin(value = "*")
 @RestController
 public class OwnerController {
 
@@ -18,12 +19,12 @@ public class OwnerController {
         return this.ownerRepository.findAll();
     }
 
-    @GetMapping("/owner/{id}")
+    @GetMapping("/owners/{id}")
     public Optional<Owner> findCar(@PathVariable Long id) {
         return this.ownerRepository.findById(id);
     }
 
-    @PostMapping(value = "/owner/add")
+    @PostMapping(value = "/owners/add")
     public void saveCar(@RequestBody Owner owner) {
         this.ownerRepository.save(owner);
     }

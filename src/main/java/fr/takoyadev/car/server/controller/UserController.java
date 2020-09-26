@@ -28,12 +28,12 @@ public class UserController {
         this.users.findAll();
     }
 
-    @PostMapping("/user/add")
+    @PostMapping("/users/add")
     public void save(@RequestBody User user) {
         this.users.save(user);
     }
 
-    @PostMapping("/user/signin")
+    @PostMapping("/users/signin")
     public String signin(@RequestBody User data) {
         try {
             String username = data.getUsername();

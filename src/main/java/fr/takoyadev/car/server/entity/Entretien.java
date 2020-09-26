@@ -1,5 +1,6 @@
 package fr.takoyadev.car.server.entity;
 
+import fr.takoyadev.car.server.enums.Status;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -18,6 +19,13 @@ public class Entretien {
 
     @Column(nullable = false)
     private String libelle;
+
+    @Column(nullable = false)
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
 
     @OneToOne
     private Car car;

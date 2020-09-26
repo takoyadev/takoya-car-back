@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(value = "*")
 @RestController
 public class CarController {
 
@@ -19,12 +20,12 @@ public class CarController {
         return this.carRepository.findAll();
     }
 
-    @GetMapping("/car/{id}")
+    @GetMapping("/cars/{id}")
     public Optional<Car> findCar(@PathVariable Long id) {
         return this.carRepository.findById(id);
     }
 
-    @PostMapping(value = "/car/add")
+    @PostMapping(value = "/cars/add")
     public void saveCar(@RequestBody Car car) {
         this.carRepository.save(car);
     }

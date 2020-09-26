@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(value = "*")
 @RestController
 public class EntretienController {
 
@@ -19,22 +20,22 @@ public class EntretienController {
         return this.entretienRepository.findAll();
     }
 
-    @GetMapping("/entretiens/owner/{id}")
-    public List<Entretien> findEntretienByOwner(@PathVariable Long id) {
-        return this.entretienRepository.findByCarOwnerId(id);
+    @GetMapping("/entretiens/owner/{ownerId}")
+    public List<Entretien> findEntretienByOwner(@PathVariable Long ownerId) {
+        return this.entretienRepository.findByCarOwnerId(ownerId);
     }
 
-    @GetMapping("/entretiens/car/{id}")
-    public List<Entretien> findEntretienByCar(@PathVariable Long id) {
-        return this.entretienRepository.findByCarId(id);
+    @GetMapping("/entretiens/car/{carId}")
+    public List<Entretien> findEntretienByCar(@PathVariable Long carId) {
+        return this.entretienRepository.findByCarId(carId);
     }
 
-    @GetMapping("/entretien/{id}")
+    @GetMapping("/entretiens/{id}")
     public Optional<Entretien> findEntretien(@PathVariable Long id) {
         return this.entretienRepository.findById(id);
     }
 
-    @PostMapping(value = "/entretien/add")
+    @PostMapping(value = "/entretiens/add")
     public void saveEntretien(@RequestBody Entretien entretien) {
         this.entretienRepository.save(entretien);
     }
