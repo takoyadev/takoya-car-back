@@ -5,7 +5,6 @@ import fr.takoyadev.car.server.entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(value = "*")
@@ -25,7 +24,7 @@ public class CarController {
         return this.carRepository.findById(id);
     }
 
-    @PostMapping(value = "/cars/add")
+    @PostMapping(value = "/cars")
     public void saveCar(@RequestBody Car car) {
         this.carRepository.save(car);
     }
