@@ -2,30 +2,38 @@ package fr.takoyadev.car.server.controller;
 
 import fr.takoyadev.car.server.dao.CarRepository;
 import fr.takoyadev.car.server.entity.Car;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @CrossOrigin(value = "*")
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/car")
 public class CarController {
 
-    @Autowired
+    @NonNull
     private CarRepository carRepository;
 
-    @GetMapping("/cars")
-    public Iterable<Car> findAllCars() {
-        return this.carRepository.findAll();
-    }
+    @GetMapping()
+    public Iterable<Car> findAllCar() { return this.carRepository.findAll(); }
 
-    @GetMapping("/cars/{id}")
-    public Optional<Car> findCar(@PathVariable Long id) {
-        return this.carRepository.findById(id);
-    }
+    @GetMapping("/{id}")
+    public Optional<Car> findCar(@PathVariable Long id) { return this.carRepository.findById(id); }
 
-    @PostMapping(value = "/cars")
+    @PostMapping()
     public void saveCar(@RequestBody Car car) {
         this.carRepository.save(car);
     }
+
+    @DeleteMapping()
+    public void deleteCar(@RequestBody Car item) {
+        this.carRepository.delete(item);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCar(@PathVariable Long id) { this.carRepository.deleteById(id); }
+
 }
