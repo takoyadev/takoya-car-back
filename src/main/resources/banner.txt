@@ -1,6 +1,6 @@
-                        ___
+${AnsiColor.MAGENTA}    ___
  TAKOYA'DEV          .-'   `'.
-                    /         \
+                    /         \  ${application.formatted-version}
  Project: car       |         ;
  App: back (rest)   |         |           ___.--,
            _.._     |0) ~ (0) |    _.---'`__.-( (_.
@@ -16,3 +16,4 @@
      `--~`   ) )    .-'.'      '.'.  | (
             (/`    ( (`          ) )  '-;
  v1.0        `      '-;         (-'
+${AnsiColor.DEFAULT}
