@@ -14,6 +14,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SpringFoxConfig {
 
     public static final String TAG_CARS = "cars";
+    public static final String TAG_OWNERS = "owners";
 
     @Bean
     public Docket api() {
@@ -24,7 +25,8 @@ public class SpringFoxConfig {
                         .version("0.0.1-SNAPSHOT")
                         .build())
                 .tags(
-                        new Tag(TAG_CARS, "Endpoints for CRUD operations on cars")
+                        new Tag(TAG_CARS, "Endpoints for CRUD operations on cars"),
+                        new Tag(TAG_OWNERS, "Endpoints for CRUD operations on owners")
                 )
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
