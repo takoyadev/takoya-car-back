@@ -7,16 +7,12 @@ import java.util.List;
 
 @Data
 @Entity
-public class Owner {
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String lastName;
-    private String firstName;
-    @OneToMany
-    private List<Car> cars;
-    @OneToOne
-    private User user;
+    @ManyToMany
+    private List<User> users;
 
 }
