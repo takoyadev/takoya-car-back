@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>fr.takoyadev.car</groupId>
-    <artifactId>back</artifactId>
+    <artifactId>takoya-car-back</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>takoya-car-back-new</name>
+    <name>takoya-car-back</name>
     <description>Takoya&apos;Dev - Car - Rest api</description>
     <properties>
         <java.version>11</java.version>
