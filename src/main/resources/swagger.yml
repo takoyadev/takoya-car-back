@@ -1,0 +1,11 @@
+swagger:
+    description: Takoya Dev' CRUD API for car servicing management
+    tags:
+        cars: Endpoints for CRUD operations on cars
+        labels: Endpoints for CRUD operations on labels
+        maintenances: Endpoints for CRUD operations on maintenances
+        owners: Endpoints for CRUD operations on owners
+        roles: Endpoints for CRUD operations on roles
+        users: Endpoints for CRUD operations on users
+    title: Takoya Dev' - Car - Back
+    version: 0.0.1-SNAPSHOT

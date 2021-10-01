@@ -1,0 +1,22 @@
+server:
+    port: 8081
+
+spring:
+    config:
+        import: classpath:swagger.yml
+    datasource:
+        driverClassName: org.h2.Driver
+        password: password
+        url: jdbc:h2:mem:testdb
+        username: sa
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        generate-ddl: true
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: https://lively-sea-5096.eu.auth0.com/
+
+auth0:
+    audience: https://takoya/login/car
