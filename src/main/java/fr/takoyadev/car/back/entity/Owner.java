@@ -16,7 +16,5 @@ public class Owner {
     private String firstName;
     @OneToMany
     private List<Car> cars;
-    @OneToOne
-    private User user;
 
 }
