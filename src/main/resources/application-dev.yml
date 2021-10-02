@@ -7,3 +7,5 @@ spring:
         password: password
         url: jdbc:h2:mem:testdb
         username: sa
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
