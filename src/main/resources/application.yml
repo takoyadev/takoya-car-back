@@ -2,7 +2,6 @@ spring:
     config:
         import: classpath:swagger.yml
     jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
         generate-ddl: true
     security:
         oauth2:
