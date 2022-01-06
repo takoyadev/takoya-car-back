@@ -20,5 +20,7 @@ public class Car {
     private Owner owner;
     @OneToMany
     private List<Maintenance> maintenances;
+    @ManyToMany
+    private List<Issue> issues;
 
 }
