@@ -30,6 +30,7 @@ public class SpringFoxConfiguration {
     public static final String TAG_OWNERS = "owners";
     public static final String TAG_ROLES = "roles";
     public static final String TAG_USERS = "users";
+    public static final String TAG_ISSUES = "issues";
 
     @NonNull
     public SpringFoxProperties properties;
@@ -50,7 +51,8 @@ public class SpringFoxConfiguration {
                         new Tag(TAG_MAINTENANCES, properties.getTags().get(TAG_MAINTENANCES)),
                         new Tag(TAG_OWNERS, properties.getTags().get(TAG_OWNERS)),
                         new Tag(TAG_ROLES, properties.getTags().get(TAG_ROLES)),
-                        new Tag(TAG_USERS, properties.getTags().get(TAG_USERS))
+                        new Tag(TAG_USERS, properties.getTags().get(TAG_USERS)),
+                        new Tag(TAG_ISSUES, properties.getTags().get(TAG_ISSUES))
                 )
                 .select()
                 .apis(RequestHandlerSelectors.any())

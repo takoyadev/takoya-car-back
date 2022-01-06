@@ -14,5 +14,7 @@ public class SecurityConst {
     public static final String SCOPE_WRITE_LABEL = "write:label";
     public static final String SCOPE_READ_OWNER = "read:owner";
     public static final String SCOPE_WRITE_OWNER = "write:owner";
+    public static final String SCOPE_READ_ISSUES = "read:issues";
+    public static final String SCOPE_WRITE_ISSUES = "write:issues";
 
 }

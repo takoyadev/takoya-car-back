@@ -13,19 +13,18 @@ import java.util.List;
 
 @Data
 @Entity
-public class Maintenance {
-
+public class Issue {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date date;
     private String title;
     private String description;
-    @ManyToMany
-    private List<Label> labels;
+    private String status;
     @ManyToOne
     private Car car;
     @ManyToMany
-    private List<Issue> issues;
-
+    private List<Maintenance> maintenances;
+    
 }
