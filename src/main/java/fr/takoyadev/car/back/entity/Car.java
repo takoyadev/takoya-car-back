@@ -16,6 +16,7 @@ public class Car {
     private String brand;
     private String model;
     private String status;
+    private String picture;
     @ManyToOne
     private Owner owner;
     @OneToMany

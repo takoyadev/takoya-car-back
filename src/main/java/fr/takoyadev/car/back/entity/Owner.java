@@ -14,6 +14,7 @@ public class Owner {
     private Long id;
     private String lastName;
     private String firstName;
+    private String picture;
     @OneToMany
     private List<Car> cars;
 
